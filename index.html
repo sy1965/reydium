@@ -1,92 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reydium Digital - Salesforce Consulting</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reydium - Salesforce Consulting</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #4a5568;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-20">
-    <div class="max-w-6xl mx-auto text-center px-4">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Unlock the Full Power of Salesforce</h1>
-      <p class="text-lg md:text-xl mb-6">At Reydium Digital, we help businesses maximize Salesforce to drive sales, boost productivity, and deliver exceptional customer experiences.</p>
-      <a href="#contact" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-200">Schedule a Free Consultation</a>
-    </div>
-  </section>
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- About Us -->
-  <section class="py-16 max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
-    <p class="text-center max-w-3xl mx-auto text-lg text-gray-600">Reydium Digital is a Salesforce consulting partner specializing in CRM optimization, automation, and custom app development. We bridge the gap between your business goals and the technology that supports them.</p>
-  </section>
+    <!-- Header Section -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo - Placeholder, replace with your actual logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <!--
+                IMPORTANT: Please replace the src below with a direct link to your logo.
+                The Google Drive URL you provided is not a direct image link.
+                -->
+                <img src="https://github.com/sy1965/reydium/blob/main/images/rey%20logo.png" alt="Reydium Logo" class="h-10">
+            </a>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8 text-lg font-medium">
+                <li><a href="#services" class="hover:text-blue-600 transition-colors">Services</a></li>
+                <li><a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Services -->
-  <section class="bg-gray-100 py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="font-bold text-xl mb-2">Salesforce Implementation</h3>
-          <p>End-to-end setup tailored to your workflows.</p>
+    <!-- Hero Section -->
+    <section id="home" class="bg-blue-600 text-white py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                Accelerate Your Business with Reydium Salesforce Solutions
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl font-light">
+                Expert Salesforce consulting for Sales, Service, Marketing, and Data.
+            </p>
+            <a href="#contact" class="mt-8 inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105">
+                Get a Free Consultation
+            </a>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="font-bold text-xl mb-2">CRM Optimization & Automation</h3>
-          <p>Streamline processes to save time and reduce costs.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Our Salesforce Consulting Services
+            </h2>
+            <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+                We help businesses of all sizes maximize their Salesforce investment with tailored solutions.
+            </p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card: AgentForce Implementation -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <svg class="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15.111a23.931 23.931 0 01-9-1.856M21 12v3.755A23.931 23.931 0 0112 15a23.931 23.931 0 01-9-1.856V12m18 0V9.255a23.931 23.931 0 01-9 1.856a23.931 23.931 0 01-9-1.856V12m18 0a2 2 0 100-4m-18 4a2 2 0 100-4m9 4a2 2 0 100-4m9 4a2 2 0 100-4m-18 4a2 2 0 100-4" />
+                    </svg>
+                    <h3 class="mt-6 text-xl font-semibold text-gray-900">AgentForce Implementation</h3>
+                    <p class="mt-4 text-gray-600">
+                        Streamline your customer service operations and improve agent productivity with a seamless AgentForce implementation.
+                    </p>
+                </div>
+                <!-- Service Card: Sales Cloud -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <svg class="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3-.895-3-2 .343-2 3-2zM9 14h6m-1-1h1.5l1.5 1.5M16.5 16.5l1.5-1.5m0-6V7m0 0h1.5m-1.5 0l1.5 1.5M12 17v4m0-4h1.5l-1.5-1.5M7.5 16.5L6 18m0-6h-1.5M4.5 7.5L3 6" />
+                    </svg>
+                    <h3 class="mt-6 text-xl font-semibold text-gray-900">Sales Cloud</h3>
+                    <p class="mt-4 text-gray-600">
+                        Optimize your sales processes, manage leads effectively, and drive revenue growth with our Sales Cloud expertise.
+                    </p>
+                </div>
+                <!-- Service Card: Service Cloud -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <svg class="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-6-6m0 0l6-6m-6 6h12a2 2 0 012 2v4a2 2 0 01-2 2h-12a2 2 0 01-2-2v-4a2 2 0 012-2z" />
+                    </svg>
+                    <h3 class="mt-6 text-xl font-semibold text-gray-900">Service Cloud</h3>
+                    <p class="mt-4 text-gray-600">
+                        Enhance customer satisfaction and loyalty by providing top-notch support with our Service Cloud solutions.
+                    </p>
+                </div>
+                <!-- Service Card: Marketing Cloud -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <svg class="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 17.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zM15 17.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.25 10.5V7.5a2.25 2.25 0 00-2.25-2.25H9A2.25 2.25 0 006.75 7.5V10.5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 17.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" />
+                    </svg>
+                    <h3 class="mt-6 text-xl font-semibold text-gray-900">Marketing Cloud</h3>
+                    <p class="mt-4 text-gray-600">
+                        Create targeted and personalized marketing campaigns that engage customers and drive growth with our expertise.
+                    </p>
+                </div>
+                <!-- Service Card: Data Solutions -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <svg class="h-12 w-12 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 11h16M4 15h16M4 19h16" />
+                    </svg>
+                    <h3 class="mt-6 text-xl font-semibold text-gray-900">Data Solutions</h3>
+                    <p class="mt-4 text-gray-600">
+                        Ensure data integrity and gain valuable insights with our data migration, integration, and analytics services.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="font-bold text-xl mb-2">Custom Development</h3>
-          <p>Build apps and integrations to extend Salesforce’s power.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Get in Touch</h2>
+            <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+                Ready to accelerate your business? Contact us today to discuss your Salesforce needs.
+            </p>
+            <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-8">
+                <!-- Contact Information -->
+                <div class="bg-white p-8 rounded-xl shadow-lg w-full md:w-1/2 lg:w-1/3">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Info</h3>
+                    <div class="space-y-4 text-left">
+                        <p class="text-gray-700"><strong>Merchant Legal Entity Name:</strong> Reydium Digital</p>
+                        <div class="flex items-start space-x-3">
+                            <svg class="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <p class="text-gray-700">
+                                <strong>Registered Address:</strong> 994 Soraon, Phaphamau Gaddopur  UTTAR PRADESH 211013
+                            </p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <p class="text-gray-700">
+                                <strong>Operational Address:</strong> 994 Soraon, Phaphamau Gaddopur UTTAR PRADESH 211013
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.128a11.056 11.056 0 006.302 6.302l1.128-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-11a2 2 0 01-2-2z" />
+                            </svg>
+                            <a href="tel:+918860014150" class="text-blue-600 hover:underline"><strong>Telephone No:</strong> (088) 600-14150</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <a href="mailto:support@reydium.in" class="text-blue-600 hover:underline"><strong>E-Mail ID:</strong> support@reydium.in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="font-bold text-xl mb-2">Training & Support</h3>
-          <p>Equip your team with the skills to succeed.</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-8 px-6 text-center">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p>&copy; 2023 Reydium. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors text-sm" data-policy="terms">Terms and Conditions</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors text-sm" data-policy="cancellation">Cancellation and Refund Policy</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors text-sm" data-policy="privacy">Privacy Policy</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors text-sm" data-policy="shipping">Shipping and Delivery Policy</a>
+            </div>
         </div>
-      </div>
+    </footer>
+
+    <!-- Policy Modal -->
+    <div id="policyModal" class="modal-overlay">
+        <div class="modal-content w-full md:w-3/4 lg:w-1/2">
+            <button id="closeModal" class="modal-close-btn">&times;</button>
+            <h3 id="policyTitle" class="text-2xl font-bold text-gray-900 mb-4"></h3>
+            <p id="policyContent" class="text-gray-600 text-left"></p>
+        </div>
     </div>
-  </section>
 
-  <!-- Why Choose Us -->
-  <section class="py-16 max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-      <div>
-        <p class="text-xl font-semibold">Certified Salesforce Experts</p>
-      </div>
-      <div>
-        <p class="text-xl font-semibold">Industry-Specific Solutions</p>
-      </div>
-      <div>
-        <p class="text-xl font-semibold">Proven Track Record</p>
-      </div>
-      <div>
-        <p class="text-xl font-semibold">Flexible Engagement Models</p>
-      </div>
-    </div>
-  </section>
+    <!-- JavaScript for smooth scrolling and modal functionality -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
+        // Policy Modal functionality
+        const policyModal = document.getElementById('policyModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const policyTitle = document.getElementById('policyTitle');
+        const policyContent = document.getElementById('policyContent');
 
+        const policies = {
+            'terms': {
+                title: 'Terms and Conditions',
+                content: 'For the purpose of these Terms and Conditions, The term "we", "us", "our" used anywhere on this page shall mean Reydium Digital, whose registered/operational office is 994 Soraon, Near navjeevan hospital , Phaphamau Gaddopur Allahabad UTTAR PRADESH 211013 . "you", “your”, "user", “visitor” shall mean any natural or legal person who is visiting our website and/or agreed to purchase from us. Your use of the website and/or purchase from us are governed by following Terms and Conditions: The content of the pages of this website is subject to change without notice. Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law. Your use of any information or materials on our website and/or product pages is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through our website and/or product pages meet your specific requirements. Our website contains material which is owned by or licensed to us. This material includes, but are not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions. All trademarks reproduced in our website which are not the property of, or licensed to, the operator are acknowledged on the website. Unauthorized use of information provided by us shall give rise to a claim for damages and/or be a criminal offense. From time to time our website may also include links to other websites. These links are provided for your convenience to provide further information. You may not create a link to our website from another website or document without Reydium Digital’s prior written consent. Any dispute arising out of use of our website and/or purchase with us and/or any engagement with us is subject to the laws of India . We, shall be under no liability whatsoever in respect of any loss or damage arising directly or indirectly out of the decline of authorization for any Transaction, on Account of the Cardholder having exceeded the preset limit mutually agreed by us with our acquiring bank from time to time'
+            },
+            'cancellation': {
+                title: 'Cancellation and Refund Policy',
+                content: 'Reydium Digital believes in helping its customers as far as possible, and has therefore a liberal cancellation policy. Under this policy: Cancellations will be considered only if the request is made within 1-2 days of placing the order. However, the cancellation request may not be entertained if the orders have been communicated to the vendors/merchants and they have initiated the process of shipping them. Reydium Digital does not accept cancellation requests for perishable items like flowers, eatables etc. However, refund/replacement can be made if the customer establishes that the quality of product delivered is not good. In case of receipt of damaged or defective items please report the same to our Customer Service team. The request will, however, be entertained once the merchant has checked and determined the same at his own end. This should be reported within 1-2 days of receipt of the products. In case you feel that the product received is not as shown on the site or as per your expectations, you must bring it to the notice of our customer service within 1-2 days of receiving the product. The Customer Service Team after looking into your complaint will take an appropriate decision. In case of complaints regarding products that come with a warranty from manufacturers, please refer the issue to them. In case of any Refunds approved by the Reydium Digital, it’ll take 1-2 days for the refund to be processed to the end customer.'
+            },
+            'privacy': {
+                title: 'Privacy Policy',
+                content: 'This privacy policy sets out how Reydium Digital uses and protects any information that you give Reydium Digital when you visit their website and/or agree to purchase from them. Reydium Digital is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, and then you can be assured that it will only be used in accordance with this privacy statement. Reydium Digital may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you adhere to these changes. We may collect the following information: Name, Contact information including email address, Demographic information such as postcode, preferences and interests, if required, Other information relevant to customer surveys and/or offers. What we do with the information we gather: We require this information to understand your needs and provide you with a better service, and in particular for the following reasons: Internal record keeping. We may use the information to improve our products and services. We may periodically send promotional emails about new products, special offers or other information which we think you may find interesting using the email address which you have provided. From time to time, we may also use your information to contact you for market research purposes. We may contact you by email, phone, fax or mail. We may use the information to customise the website according to your interests. We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure we have put in suitable measures. How we use cookies: A cookie is a small file which asks permission to be placed on your computer\'s hard drive. Once you agree, the file is added and the cookie helps analyze web traffic or lets you know when you visit a particular site. Cookies allow web applications to respond to you as an individual. The web application can tailor its operations to your needs, likes and dislikes by gathering and remembering information about your preferences. We use traffic log cookies to identify which pages are being used. This helps us analyze data about webpage traffic and improve our website in order to tailor it to customer needs. We only use this information for statistical analysis purposes and then the data is removed from the system. Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find useful and which you do not. A cookie in no way gives us access to your computer or any information about you, other than the data you choose to share with us. You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of the website. Controlling your personal information: You may choose to restrict the collection or use of your personal information in the following ways: whenever you are asked to fill in a form on the website, look for the box that you can click to indicate that you do not want the information to be used by anybody for direct marketing purposes, if you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time by writing to or emailing us at, We will not sell, distribute or lease your personal information to third parties unless we have your permission or are required by law to do so. We may use your personal information to send you promotional information about third parties which we think you may find interesting if you tell us that you wish this to happen. If you believe that any information we are holding on you is incorrect or incomplete, please write to 994 Soraon , Phaphamau Gaddopur UTTAR PRADESH 211013 . or contact us at or as soon as possible. We will promptly correct any information found to be incorrect.'
+            },
+            'shipping': {
+                title: 'Shipping and Delivery Policy',
+                content: 'For International buyers, orders are shipped and delivered through registered international courier companies and/or International speed post only. For domestic buyers, orders are shipped through registered domestic courier companies and /or speed post only. Orders are shipped within Not Applicable or as per the delivery date agreed at the time of order confirmation and delivering of the shipment subject to Courier Company / post office norms. Reydium Digital is not liable for any delay in delivery by the courier company / postal authorities and only guarantees to hand over the consignment to the courier company or postal authorities within Not Applicable rom the date of the order and payment or as per the delivery date agreed at the time of order confirmation. Delivery of all orders will be to the address provided by the buyer. Delivery of our services will be confirmed on your mail ID as specified during registration. For any issues in utilizing our services you may contact our helpdesk on  (088) 600-14150 or support@reydium.in'
+            }
+        };
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 max-w-6xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-6">Ready to Elevate Your Salesforce Experience?</h2>
-    <a href="mailto:support@reydium.in" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700">Book a Free Strategy Session</a>
-    <div class="mt-8 text-lg text-gray-600">
-      <p>📍 Office: 994 Soraon, Gaddopur Phaphamau Prayagraj</p>
-      <p>📧 Email: <a href="mailto:support@reydium.in" class="text-blue-600 hover:underline">support@reydium.in</a></p>
-      <p>📞 Phone: (088) 600-14150</p>
-    </div>
-  </section>
+        document.querySelectorAll('a[data-policy]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const policyKey = link.getAttribute('data-policy');
+                const policy = policies[policyKey];
+                if (policy) {
+                    policyTitle.textContent = policy.title;
+                    policyContent.textContent = policy.content;
+                    policyModal.style.display = 'flex';
+                }
+            });
+        });
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-300 py-6 text-center">
-    <p>&copy; <span id="year"></span> Reydium Digital. All rights reserved.</p>
-  </footer>
+        closeModalBtn.addEventListener('click', () => {
+            policyModal.style.display = 'none';
+        });
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+        policyModal.addEventListener('click', (e) => {
+            if (e.target === policyModal) {
+                policyModal.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
-
