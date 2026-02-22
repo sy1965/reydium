@@ -3,46 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shipping and Delivery Policy - Reydium</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+    <title>Shipping and Delivery Policy | Reydium</title>
+    <meta name="description" content="Shipping and Delivery Policy for Reydium Digital.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
+    <div class="aurora" aria-hidden="true"></div>
 
-    <header class="bg-white sticky top-0 z-50 shadow-md">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-                <img src="images/reylogo.png" alt="Reydium Logo" class="h-10">
+    <header class="site-header" id="top">
+        <div class="container nav-wrap">
+            <a href="index.html" class="brand" aria-label="Reydium Home">
+                <img src="images/reylogo.png" alt="Reydium Logo" class="brand-logo">
             </a>
-            <ul class="hidden md:flex space-x-8 text-lg font-medium">
-                <li><a href="index.html#services" class="hover:text-gray-400 transition-colors">Services</a></li>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="salesforce-services.html">Salesforce</a></li>
+                <li><a href="integration-services.html">Integrations</a></li>
+                <li><a href="mobile-app-development.html">Mobile Apps</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-        </nav>
+            <a href="contact.html" class="btn btn-primary">Talk to Us</a>
+        </div>
     </header>
 
-    <main class="container mx-auto py-12 px-6">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Shipping and Delivery Policy</h1>
-        <div class="text-gray-600 prose max-w-none">
-            <p>For International buyers, orders are shipped and delivered through registered international courier companies and/or International speed post only. For domestic buyers, orders are shipped through registered domestic courier companies and /or speed post only. Orders are shipped within Not Applicable or as per the delivery date agreed at the time of order confirmation and delivering of the shipment subject to Courier Company / post office norms. Reydium Digital is not liable for any delay in delivery by the courier company / postal authorities and only guarantees to hand over the consignment to the courier company or postal authorities within Not Applicable rom the date of the order and payment or as per the delivery date agreed at the time of order confirmation. Delivery of all orders will be to the address provided by the buyer. Delivery of our services will be confirmed on your mail ID as specified during registration. For any issues in utilizing our services you may contact our helpdesk on (088) 600-14150 or support@reydium.in</p>
-        </div>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">Legal</p>
+                <h1 class="page-title reveal">Shipping and Delivery Policy</h1>
+                <p class="page-subtitle reveal reveal-delay-1">
+                    This policy defines how physical and service deliveries are handled by Reydium Digital.
+                </p>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container content-grid">
+                <article class="card stack reveal">
+                    <h2>Physical Shipment Guidance</h2>
+                    <p>
+                        For international buyers, shipments are handled through registered international courier companies and/or international speed post.
+                        For domestic buyers, shipments are handled through registered domestic courier companies and/or speed post.
+                    </p>
+                    <ul class="bullets">
+                        <li>Dispatch timelines are shared at order confirmation.</li>
+                        <li>Delivery timelines depend on courier and postal service norms.</li>
+                        <li>Address supplied by the buyer is treated as the final delivery address.</li>
+                    </ul>
+                </article>
+
+                <article class="card stack reveal reveal-delay-1">
+                    <h2>Service Delivery Guidance</h2>
+                    <p>
+                        For digital services, delivery is typically confirmed via registered email communication and project updates.
+                        Service start dates and milestones are agreed during engagement kickoff.
+                    </p>
+                    <ul class="list">
+                        <li>Support Desk: support@reydium.in</li>
+                        <li>Help Contact: +91 88600 14150</li>
+                        <li>Escalation: Reach out through the same channels with order or project details.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="container" style="margin-top: 1rem;">
+                <article class="card reveal reveal-delay-2">
+                    <h2>Liability and Delays</h2>
+                    <p>
+                        Reydium Digital is not liable for delays caused by courier companies or postal authorities. Our responsibility is limited to
+                        handing over consignments within committed dispatch windows communicated at order confirmation.
+                    </p>
+                </article>
+            </div>
+        </section>
     </main>
 
-    <footer class="bg-gray-900 text-white py-8 px-6 text-center">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p>&copy; 2025 Reydium. All rights reserved.</p>
-            <div class="flex space-x-6">
-                <a href="terms.html" class="text-gray-300 hover:text-white transition-colors text-sm">Terms and Conditions</a>
-                <a href="cancellation.html" class="text-gray-300 hover:text-white transition-colors text-sm">Cancellation and Refund Policy</a>
-                <a href="privacy.html" class="text-gray-300 hover:text-white transition-colors text-sm">Privacy Policy</a>
-                <a href="shipping.html" class="text-gray-300 hover:text-white transition-colors text-sm">Shipping and Delivery Policy</a>
-                <a href="contact.html" class="text-gray-300 hover:text-white transition-colors text-sm">Contact Info</a>
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <p>&copy; <span id="year"></span> Reydium. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="salesforce-services.html">Salesforce Services</a>
+                <a href="integration-services.html">Integration Services</a>
+                <a href="mobile-app-development.html">Mobile App Development</a>
+                <a href="terms.html">Terms</a>
+                <a href="cancellation.html">Cancellation</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="shipping.html">Shipping</a>
+                <a href="contact.html">Contact</a>
             </div>
         </div>
     </footer>
+
+    <script src="site.js"></script>
 </body>
 </html>
